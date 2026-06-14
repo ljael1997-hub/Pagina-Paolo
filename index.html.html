@@ -59,8 +59,6 @@
   }
   .nav-cta:hover { background: var(--teal-light) !important; }
 
-
-
   /* ── HERO ── */
   #hero {
     min-height: 100vh;
@@ -192,7 +190,6 @@
   }
   .sobre-sticky { position: sticky; top: 8rem; }
 
-  /* RECUADRO NOMBRE — destacado */
   .nombre-card {
     background: var(--teal);
     border-radius: 1.4rem;
@@ -212,7 +209,6 @@
   }
   .nombre-card .section-title em { color: rgba(255,255,255,.85); font-style: italic; }
 
-  /* FOTO en sobre mí */
   .sobre-foto {
     width: 100%; max-width: 320px;
     border-radius: 1.2rem;
@@ -225,7 +221,6 @@
     aspect-ratio: 3/4;
   }
 
-  /* PROVERBIO — fondo oscuro con texto marfil */
   .sobre-quote {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.3rem; font-style: italic; font-weight: 300;
@@ -261,7 +256,6 @@
   }
   .sobre-contact-card a:hover { color: var(--teal-light); }
 
-  /* Timeline */
   .timeline { position: relative; padding-left: 2rem; }
   .timeline::before {
     content: ''; position: absolute; left: 0; top: .5rem;
@@ -317,86 +311,145 @@
     font-size: 1.25rem; font-weight: 600; margin-bottom: .6rem; color: var(--dark);
   }
   .servicio-card p { font-size: .88rem; color: var(--mid); line-height: 1.7; }
-
-  /* ── TEST — layout 2 columnas ── */
-  #test { background: var(--white); }
-  .test-layout {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;
+  .servicio-list {
+    list-style: none; margin-top: .8rem;
+    display: flex; flex-direction: column; gap: .35rem;
   }
-  .test-left { /* disclaimer + intro info */ }
+  .servicio-list li {
+    font-size: .82rem; color: var(--mid); line-height: 1.5;
+    padding-left: 1rem; position: relative;
+  }
+  .servicio-list li::before {
+    content: '·'; position: absolute; left: 0; color: var(--teal); font-weight: 700;
+  }
+
+  /* ── SALUD MENTAL ── */
+  #salud-mental {
+    background: var(--white);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+  }
+  .salud-mental-left {}
+  .salud-mental-right {
+    background: linear-gradient(145deg, var(--teal), var(--teal-light));
+    border-radius: 1.4rem; padding: 2.5rem; color: white;
+  }
+  .salud-mental-right h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 300; margin-bottom: 1rem;
+  }
+  .salud-mental-right p { font-size: .88rem; opacity: .85; line-height: 1.7; margin-bottom: 1rem; }
+  .salud-sintomas { list-style: none; display: flex; flex-direction: column; gap: .5rem; margin-top: .5rem; }
+  .salud-sintomas li {
+    display: flex; align-items: flex-start; gap: .6rem;
+    font-size: .85rem; opacity: .9; line-height: 1.5;
+  }
+  .salud-sintomas li::before {
+    content: '·'; flex-shrink: 0; font-size: 1.4rem; line-height: 1;
+    color: rgba(255,255,255,.6); margin-top: -.1rem;
+  }
+
+  /* ── TEST / DASS-21 ── */
+  #test { background: var(--light); }
+  .test-layout {
+    display: grid; grid-template-columns: 1fr 1.2fr; gap: 2.5rem; align-items: start;
+  }
+  .test-left { position: sticky; top: 6rem; }
+  .test-img-wrap {
+    border-radius: 1.4rem; overflow: hidden;
+    box-shadow: 0 12px 40px rgba(45,125,120,.15); margin-bottom: 1.2rem;
+  }
+  .test-img-wrap img { width: 100%; display: block; object-fit: cover; height: 460px; }
   .test-disclaimer {
     background: linear-gradient(135deg, #fff8e8, #fff3d0);
     border: 1.5px solid var(--accent);
-    border-radius: 1rem; padding: 1.2rem 1.5rem;
-    display: flex; gap: .8rem; align-items: flex-start;
-    margin-bottom: 2rem;
+    border-radius: 1rem; padding: 1rem 1.2rem;
+    display: flex; gap: .7rem; align-items: flex-start;
   }
-  .test-disclaimer-icon { font-size: 1.2rem; margin-top: .1rem; flex-shrink: 0; }
-  .test-disclaimer p { font-size: .85rem; color: #7a5c1e; line-height: 1.6; }
+  .test-disclaimer-icon { font-size: 1rem; margin-top: .1rem; flex-shrink: 0; }
+  .test-disclaimer p { font-size: .8rem; color: #7a5c1e; line-height: 1.55; }
   .test-disclaimer strong { color: #5a3e0e; }
-
-  /* Panel informativo lado izquierdo */
-  .test-info-panel {
+  .test-instructions-inline {
     background: linear-gradient(145deg, var(--teal), var(--teal-light));
-    border-radius: 1.4rem; padding: 2rem;
-    color: white; margin-top: 0;
+    border-radius: 1.1rem; padding: 1.2rem 1.4rem; color: white; margin-bottom: 1rem;
   }
-  .test-info-panel h3 {
+  .test-instructions-inline h3 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem; font-weight: 300; margin-bottom: 1rem; line-height: 1.3;
+    font-size: 1.15rem; font-weight: 400; margin-bottom: .5rem;
   }
-  .test-info-panel p { font-size: .88rem; opacity: .85; line-height: 1.7; margin-bottom: 1.2rem; }
-  .test-info-list { list-style: none; display: flex; flex-direction: column; gap: .7rem; }
+  .test-instructions-inline p { font-size: .8rem; opacity: .88; line-height: 1.55; margin-bottom: .6rem; }
+  .test-info-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: .3rem .8rem; }
   .test-info-list li {
-    display: flex; align-items: flex-start; gap: .7rem;
-    font-size: .85rem; opacity: .9; line-height: 1.5;
+    display: flex; align-items: flex-start; gap: .5rem;
+    font-size: .78rem; opacity: .92; line-height: 1.4;
   }
   .test-info-list li::before {
     content: '✓'; flex-shrink: 0;
     background: rgba(255,255,255,.2); border-radius: 50%;
-    width: 1.3rem; height: 1.3rem; display: flex; align-items: center; justify-content: center;
-    font-size: .7rem; font-weight: 700; margin-top: .05rem;
+    width: 1.1rem; height: 1.1rem; display: flex; align-items: center; justify-content: center;
+    font-size: .6rem; font-weight: 700; margin-top: .1rem;
   }
-  .test-psi-deco {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 5rem; color: rgba(255,255,255,.12);
-    text-align: right; line-height: 1; margin-top: .5rem;
-  }
-
-  /* Test box */
+  .test-psi-deco { display: none; }
+  .test-info-panel { display: none; }
+  /* Test box — DASS-21 */
   .test-box {
-    background: var(--light); border-radius: 1.5rem;
+    background: white; border-radius: 1.5rem;
     border: 1px solid var(--border); overflow: hidden;
     position: sticky; top: 6rem;
   }
   .test-progress-bar { height: 4px; background: var(--border); }
   .test-progress-fill { height: 100%; background: var(--teal); transition: width .4s ease; width: 0%; }
-  .test-inner { padding: 2.5rem; }
-  .test-step { display: none; }
-  .test-step.active { display: block; }
-  .test-question-num {
-    font-size: .75rem; letter-spacing: .1em; text-transform: uppercase;
-    color: var(--muted); margin-bottom: .6rem;
+  .test-inner { padding: 1.6rem 2rem; }
+
+  .dass-header {
+    margin-bottom: 1.2rem;
   }
-  .test-question {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.35rem; font-weight: 400; color: var(--dark);
-    margin-bottom: 1.8rem; line-height: 1.4;
+  .dass-scale-legend {
+    display: grid; grid-template-columns: repeat(4,1fr); gap: .4rem;
+    margin-bottom: 1.5rem;
+    background: var(--teal-pale); border-radius: .75rem; padding: .8rem;
   }
-  .test-options { display: flex; flex-direction: column; gap: .7rem; }
-  .test-option {
-    background: white; border: 1.5px solid var(--border);
-    border-radius: .75rem; padding: .9rem 1rem;
-    cursor: pointer; transition: all .2s;
-    display: flex; align-items: center; gap: .8rem;
-    font-size: .88rem; color: var(--mid); text-align: left;
-    font-family: 'DM Sans', sans-serif;
+  .dass-scale-item {
+    text-align: center;
   }
-  .test-option:hover { border-color: var(--teal); color: var(--teal); background: var(--teal-pale); }
-  .test-option.selected { border-color: var(--teal); background: var(--teal-pale); color: var(--teal); font-weight: 500; }
-  .test-option::before { content: '○'; flex-shrink: 0; color: var(--border); transition: color .2s; }
-  .test-option.selected::before { content: '●'; color: var(--teal); }
-  .test-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 1.8rem; }
+  .dass-scale-num {
+    display: block; font-size: 1.1rem; font-weight: 700;
+    color: var(--teal); font-family: 'Cormorant Garamond', serif;
+  }
+  .dass-scale-label {
+    display: block; font-size: .7rem; color: var(--mid); line-height: 1.3; margin-top: .2rem;
+  }
+
+  .dass-question-block { margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+  .dass-question-block:last-child { border-bottom: none; margin-bottom: 0; }
+  .dass-question-text {
+    font-size: .9rem; color: var(--dark); margin-bottom: .6rem; line-height: 1.5;
+  }
+  .dass-question-num-label {
+    font-size: .7rem; color: var(--muted); text-transform: uppercase;
+    letter-spacing: .06em; display: block; margin-bottom: .3rem;
+  }
+  .dass-options {
+    display: grid; grid-template-columns: repeat(4,1fr); gap: .4rem;
+  }
+  .dass-option {
+    border: 1.5px solid var(--border); border-radius: .6rem;
+    padding: .5rem .2rem; cursor: pointer;
+    display: flex; flex-direction: column; align-items: center; gap: .2rem;
+    background: white; transition: all .18s; font-family: 'DM Sans', sans-serif;
+  }
+  .dass-option:hover { border-color: var(--teal); background: var(--teal-pale); }
+  .dass-option.selected { border-color: var(--teal); background: var(--teal-pale); }
+  .dass-option-num {
+    font-size: 1.1rem; font-weight: 700; color: var(--teal);
+    font-family: 'Cormorant Garamond', serif; line-height: 1;
+  }
+  .dass-option.selected .dass-option-num { color: var(--teal); }
+
+  /* Paginación DASS */
+  .dass-page { display: none; }
+  .dass-page.active { display: block; }
+
+  .test-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; }
   .test-nav-btn {
     padding: .65rem 1.4rem; border-radius: 100px; font-size: .85rem;
     font-weight: 500; cursor: pointer; transition: all .2s; border: none;
@@ -407,22 +460,46 @@
   .btn-next { background: var(--teal); color: white; box-shadow: 0 4px 16px rgba(45,125,120,.25); }
   .btn-next:hover { background: var(--teal-light); }
   .btn-next:disabled { opacity: .4; cursor: not-allowed; }
+
+  /* Resultado DASS */
   .test-result { display: none; }
-  .test-result.active { display: block; text-align: center; padding: 1rem 0; }
-  .result-emoji { font-size: 3rem; margin-bottom: 1rem; }
-  .result-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.7rem; font-weight: 400; color: var(--dark); margin-bottom: .8rem;
+  .test-result.active { display: block; }
+  .dass-result-scores {
+    display: grid; grid-template-columns: repeat(3,1fr); gap: .8rem; margin: 1.2rem 0;
   }
-  .result-desc { color: var(--mid); font-size: .9rem; line-height: 1.7; margin-bottom: 1.5rem; }
+  .dass-score-card {
+    border-radius: .9rem; padding: 1rem .8rem; text-align: center;
+    border: 1.5px solid var(--border); background: var(--light);
+  }
+  .dass-score-label { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+  .dass-score-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem; font-weight: 600; color: var(--teal); line-height: 1.1; margin: .2rem 0;
+  }
+  .dass-score-level {
+    font-size: .75rem; font-weight: 500; padding: .2rem .6rem;
+    border-radius: 100px; display: inline-block; margin-top: .2rem;
+  }
+  .level-normal   { background: #e6f4ea; color: #2e7d32; }
+  .level-leve     { background: #fff8e1; color: #f57f17; }
+  .level-moderado { background: #fff3e0; color: #e65100; }
+  .level-severo   { background: #fce4ec; color: #c62828; }
+  .level-extremo  { background: #f3e5f5; color: #6a1b9a; }
+
   .result-cta {
     display: inline-flex; align-items: center; gap: .5rem;
     background: var(--teal); color: white; text-decoration: none;
     padding: .85rem 1.8rem; border-radius: 100px; font-weight: 500;
     font-size: .9rem; transition: all .25s; box-shadow: 0 4px 20px rgba(45,125,120,.3);
+    margin-top: 1rem;
   }
   .result-cta:hover { background: var(--teal-light); transform: translateY(-2px); }
-  .result-note { font-size: .75rem; color: var(--muted); margin-top: 1rem; font-style: italic; }
+  .result-note { font-size: .75rem; color: var(--muted); margin-top: 1rem; font-style: italic; line-height: 1.5; }
+  .result-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 400; color: var(--dark); margin-bottom: .4rem;
+  }
+  .result-desc { color: var(--mid); font-size: .88rem; line-height: 1.7; margin-bottom: .5rem; }
 
   /* ── TESTIMONIOS ── */
   #testimonios { background: var(--light); }
@@ -498,55 +575,47 @@
     display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
     position: relative; overflow: hidden;
   }
-  /* Ondas animadas de fondo */
   #contacto::before,
   #contacto::after {
     content: '';
-    position: absolute;
-    border-radius: 50%;
-    pointer-events: none;
+    position: absolute; border-radius: 50%; pointer-events: none;
     border: 1.5px solid rgba(74,168,162,.12);
   }
   #contacto::before {
-    width: 60vw; height: 60vw;
-    right: -20vw; top: -20vw;
+    width: 60vw; height: 60vw; right: -20vw; top: -20vw;
     animation: wave-pulse 8s ease-in-out infinite;
   }
   #contacto::after {
-    width: 40vw; height: 40vw;
-    right: -10vw; top: -10vw;
+    width: 40vw; height: 40vw; right: -10vw; top: -10vw;
     animation: wave-pulse 8s ease-in-out infinite .5s;
   }
   .contacto-wave3 {
-    position: absolute;
-    width: 25vw; height: 25vw;
-    right: -4vw; top: -4vw;
-    border-radius: 50%;
+    position: absolute; width: 25vw; height: 25vw;
+    right: -4vw; top: -4vw; border-radius: 50%;
     border: 1.5px solid rgba(74,168,162,.15);
-    animation: wave-pulse 8s ease-in-out infinite 1s;
-    pointer-events: none;
+    animation: wave-pulse 8s ease-in-out infinite 1s; pointer-events: none;
   }
   @keyframes wave-pulse {
     0%, 100% { transform: scale(1);   opacity: .7; }
     50%       { transform: scale(1.06); opacity: 1; }
   }
-
-  /* Pulso en botón WhatsApp */
   .btn-whatsapp {
-    position: relative;
+    position: relative; display: inline-flex; align-items: center; gap: .6rem;
+    background: #25d366; color: white;
+    padding: 1rem 2rem; border-radius: 100px;
+    text-decoration: none; font-weight: 500; font-size: .95rem;
+    transition: all .25s; box-shadow: 0 4px 20px rgba(37,211,102,.3);
   }
   .btn-whatsapp::before {
-    content: '';
-    position: absolute; inset: -6px;
-    border-radius: 100px;
+    content: ''; position: absolute; inset: -6px; border-radius: 100px;
     background: rgba(37,211,102,.25);
-    animation: whatsapp-glow 2.4s ease-in-out infinite;
-    pointer-events: none;
+    animation: whatsapp-glow 2.4s ease-in-out infinite; pointer-events: none;
   }
   @keyframes whatsapp-glow {
     0%, 100% { transform: scale(1);   opacity: .6; }
     50%       { transform: scale(1.07); opacity: 0; }
   }
+  .btn-whatsapp:hover { background: #1fba58; transform: translateY(-2px); }
   .contacto-left .section-tag { color: var(--teal-light); }
   .contacto-left .section-title { color: white; }
   .contacto-left .section-lead { color: rgba(255,255,255,.65); }
@@ -572,14 +641,6 @@
     font-size: 6rem; color: var(--teal-light); opacity: .3; line-height: 1; margin-bottom: .5rem;
   }
   .contacto-right p { color: rgba(255,255,255,.7); font-size: .9rem; line-height: 1.7; margin-bottom: 1.5rem; }
-  .btn-whatsapp {
-    display: inline-flex; align-items: center; gap: .6rem;
-    background: #25d366; color: white;
-    padding: 1rem 2rem; border-radius: 100px;
-    text-decoration: none; font-weight: 500; font-size: .95rem;
-    transition: all .25s; box-shadow: 0 4px 20px rgba(37,211,102,.3);
-  }
-  .btn-whatsapp:hover { background: #1fba58; transform: translateY(-2px); }
 
   /* ── FOOTER ── */
   footer {
@@ -596,6 +657,7 @@
   @media (max-width: 1024px) {
     .test-layout { grid-template-columns: 1fr; }
     .test-box { position: static; }
+    #salud-mental { grid-template-columns: 1fr; }
   }
   @media (max-width: 900px) {
     #hero { grid-template-columns: 1fr; padding-top: 6rem; }
@@ -606,10 +668,12 @@
     .servicios-grid, .testimonios-grid { grid-template-columns: 1fr; }
     .faq-grid, #contacto { grid-template-columns: 1fr; }
     .nav-links { display: none; }
+    .dass-result-scores { grid-template-columns: 1fr; }
   }
   @media (max-width: 600px) {
     #metricas { grid-template-columns: 1fr 1fr; }
     .metric + .metric::before { display: none; }
+    .dass-scale-legend { grid-template-columns: repeat(2,1fr); }
   }
 </style>
 </head>
@@ -634,8 +698,8 @@
     <div class="hero-badge">
       <span>UAM Xochimilco</span>&nbsp;· Cognitivo-Conductual y Humanista
     </div>
-    <h1>Un espacio para <em>pensarse</em>, sentirse y volver a habitar la propia vida.</h1>
-    <p>Acompaño procesos de terapia individual, de pareja y para jóvenes desde hace más de catorce años. Presencial en Ciudad de México y en línea desde cualquier lugar.</p>
+    <h1>Permíteme acompañarte en tu proceso, <em>sin juicios</em> y con completa discreción.</h1>
+    <p>El origen, los acontecimientoss y eventos no son tu destino — ese lo construyes tú. Un espacio para expresar lo que has callado, escuchar tu vida y no tus miedos. Presencial en Ciudad de México y en línea desde cualquier lugar.</p>
     <div class="hero-actions">
       <a href="https://wa.me/525540673953?text=Hola%20Paolo%2C%20vi%20tu%20p%C3%A1gina%20y%20me%20gustar%C3%ADa%20agendar%20una%20cita." class="btn-primary" target="_blank">
         💬 Agendar por WhatsApp
@@ -644,7 +708,6 @@
     </div>
   </div>
   <div class="hero-img-wrap fade-up">
-    <!-- Foto del terapeuta — reemplazar src con foto profesional cuando esté disponible -->
     <img
       src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23e8f4f3'/%3E%3Ctext x='200' y='220' font-family='serif' font-size='120' fill='%232d7d78' text-anchor='middle' opacity='0.4'%3EΨ%3C/text%3E%3Ctext x='200' y='310' font-family='sans-serif' font-size='14' fill='%236b7a84' text-anchor='middle'%3EPaolo Iván Levario%3C/text%3E%3C/svg%3E"
       alt="Paolo Iván Levario Legorreta — Psicólogo Clínico"
@@ -677,14 +740,11 @@
 <!-- SOBRE MÍ -->
 <section id="sobre">
   <div class="sobre-sticky fade-up">
-
-    <!-- RECUADRO NOMBRE DESTACADO -->
     <div class="nombre-card">
       <p class="section-tag">Mi historia</p>
       <h2 class="section-title">Hola, soy <em>Paolo Iván</em><br>Levario Legorreta.</h2>
     </div>
 
-    <!-- Foto del terapeuta en sección Sobre mí -->
     <img
       src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 400'%3E%3Crect width='300' height='400' fill='%23e8f4f3'/%3E%3Ctext x='150' y='200' font-family='serif' font-size='80' fill='%232d7d78' text-anchor='middle' opacity='0.35'%3EΨ%3C/text%3E%3Ctext x='150' y='360' font-family='sans-serif' font-size='12' fill='%236b7a84' text-anchor='middle'%3EFoto del terapeuta%3C/text%3E%3Ctext x='150' y='378' font-family='sans-serif' font-size='11' fill='%236b7a84' text-anchor='middle'%3E(reemplazar con foto real)%3C/text%3E%3C/svg%3E"
       alt="Paolo Iván Levario Legorreta"
@@ -693,13 +753,15 @@
     >
 
     <p style="color:var(--mid); font-size:.92rem; line-height:1.8; margin-bottom:.8rem;">
-      Soy psicólogo clínico egresado de la <strong>Universidad Autónoma Metropolitana, Unidad Xochimilco</strong>, con más de catorce años de práctica clínica continua. Mi enfoque integra la terapia cognitivo-conductual y la orientación humanista para acompañarte de manera honesta y empática.
+      Mi formación en Psicología en la <strong>UAM Xochimilco</strong> tiene una base y enfoque <strong>social y multi-referencial</strong> que me ha enseñado que una persona es más que su medio ambiente o su propia percepción: es un conjunto con su medio externo, interno e historia. Por eso es tan especial y única cada persona, su historia y su percepción individual de sí misma.
+    </p>
+    <p style="color:var(--mid); font-size:.92rem; line-height:1.8; margin-bottom:.8rem;">
+      Como psicólogo reconozco que cada cambio, etapa o modificación en nuestro medio de vida —ya sea por un evento, los ciclos naturales de la vida o cuestionamientos internos— conlleva sufrimiento, inseguridad y miedo que nos confunde o impide tener un panorama hacia el futuro. Es ahí donde la labor terapéutica sirve de luz para despejar la obscuridad y retomar el camino deseado.
     </p>
     <p style="color:var(--mid); font-size:.92rem; line-height:1.8;">
-      Trabajé durante más de once años en el Centro de Atención Psicológica de la Policía Federal y la Guardia Nacional, y también como profesor de bachillerato. La escucha activa y el respeto a tu proceso son la base de cualquier cambio real.
+      Mi deseo es poder ser tu apoyo, y en algunos momentos de guía, durante tu trayecto buscando los mejores caminos que nos lleven a tus metas y objetivos.
     </p>
 
-    <!-- PROVERBIO — fondo oscuro, texto marfil cálido -->
     <blockquote class="sobre-quote">
       "El que adquiere cordura a sí mismo se ama,<br>el que retiene el discernimiento prospera."
       <span class="sobre-quote-ref">— Prov 19:8</span>
@@ -718,28 +780,28 @@
 
     <div class="timeline fade-up">
       <div class="tl-item">
-        <div class="tl-period">2005 – 2009</div>
-        <div class="tl-role">Licenciatura en Psicología</div>
-        <div class="tl-place">Universidad Autónoma Metropolitana, Unidad Xochimilco</div>
-        <div class="tl-desc">Promedio general: 9.3</div>
+        <div class="tl-period">2010</div>
+        <div class="tl-role">Psicólogo — Centro de Atención a la Violencia Intrafamiliar (CAVI)</div>
+        <div class="tl-place">Ciudad de México</div>
+        <div class="tl-desc">Atención y sostén emocional a víctimas de violencia familiar. A través de talleres y atención psicoemocional, los pacientes retomaron esperanza en su futuro, desarrollando habilidades de seguridad, resiliencia y asertividad.</div>
       </div>
       <div class="tl-item">
-        <div class="tl-period">2011 – Presente</div>
-        <div class="tl-role">Psicólogo Clínico · Consultorio Privado</div>
-        <div class="tl-place">Ciudad de México (Tlalpan, Xochimilco) · Presencial y en línea</div>
+        <div class="tl-period">2011</div>
+        <div class="tl-role">Psicólogo — Instituto Mexicano de la Juventud (IMJUVE)</div>
+        <div class="tl-place">Programa Siempre a tu lado · Nacional</div>
+        <div class="tl-desc">Trabajo con jóvenes en situación de violencia de pareja mediante conferencias y talleres en escuelas a nivel básico y espacios públicos, promoviendo el reconocimiento de comportamientos de riesgo.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-period">2012 – 2022</div>
+        <div class="tl-role">Psicólogo Clínico — Policía Federal y Guardia Nacional</div>
+        <div class="tl-place">C.A.P. · Álvaro Obregón, CDMX</div>
+        <div class="tl-desc">Atención psicológica y emocional a elementos y familias, asesoría y capacitación mediante talleres y cursos, brindando herramientas para la salud emocional y mejor desempeño personal, familiar y laboral.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-period">2023 – Presente</div>
+        <div class="tl-role">Psicólogo Clínico Independiente</div>
+        <div class="tl-place">Ciudad de México · Presencial y en línea</div>
         <div class="tl-desc">Atención a adultos, parejas y jóvenes. Resolución de conflictos, manejo emocional, desarrollo de habilidades y autoconocimiento.</div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-period">2011 – 2022</div>
-        <div class="tl-role">Suboficial / Psicólogo Clínico</div>
-        <div class="tl-place">Policía Federal y Guardia Nacional · C.A.P. — Álvaro Obregón, CDMX</div>
-        <div class="tl-desc">Atención psicológica a integrantes y familias: terapia de pareja, duelo, estrés y salud mental. Conferencista en diferentes estados del país. Instructor en la Academia Superior de la Policía Federal (San Luis Potosí) en Derechos Humanos y manejo emocional.</div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-period">2024 – 2026</div>
-        <div class="tl-role">Profesor de Bachillerato</div>
-        <div class="tl-place">CONALEP Xochimilco · Ciudad de México</div>
-        <div class="tl-desc">Materias: identificación de emociones, asertividad, toma de decisiones, resiliencia, humanidades y desarrollo humano.</div>
       </div>
     </div>
 
@@ -748,6 +810,7 @@
       <span class="skill-tag">Escucha activa</span>
       <span class="skill-tag">Terapia cognitivo-conductual</span>
       <span class="skill-tag">Enfoque humanista</span>
+      <span class="skill-tag">Enfoque social multi-referencial</span>
       <span class="skill-tag">Evaluación psicológica</span>
       <span class="skill-tag">Terapia de pareja</span>
       <span class="skill-tag">Manejo del duelo</span>
@@ -756,7 +819,6 @@
       <span class="skill-tag">Confidencialidad estricta</span>
       <span class="skill-tag">Terapia para jóvenes</span>
       <span class="skill-tag">Resolución de conflictos</span>
-      <span class="skill-tag">Trabajo en equipo</span>
     </div>
   </div>
 </section>
@@ -765,163 +827,412 @@
 <section id="servicios">
   <p class="section-tag fade-up">¿En qué te puedo ayudar?</p>
   <h2 class="section-title fade-up">Servicios <em>terapéuticos</em></h2>
-  <p class="section-lead fade-up">Cada proceso es único. Te acompaño de acuerdo a tus necesidades, a tu ritmo y en el espacio que más te comode.</p>
+  <p class="section-lead fade-up">Cada proceso es único. Te acompaño de acuerdo a tus necesidades, a tu ritmo y en el espacio que más te acomode.</p>
   <div class="servicios-grid">
     <div class="servicio-card fade-up">
       <div class="servicio-icon">🧍</div>
       <h3>Terapia Individual</h3>
-      <p>Espacio de escucha confidencial para adultos y jóvenes. Trabajamos en ansiedad, depresión, autoestima, manejo emocional, toma de decisiones y crecimiento personal.</p>
+      <p>Espacio de escucha personalizado y confidencial para adultos y jóvenes, sin discriminación alguna. Trabajamos temas como:</p>
+      <ul class="servicio-list">
+        <li>Ansiedad y depresión</li>
+        <li>Autoestima y desarrollo personal</li>
+        <li>Reconocimiento y manejo emocional</li>
+        <li>Toma de decisiones y procrastinación</li>
+        <li>Duelo y comunicación asertiva</li>
+        <li>Dificultades de adaptación</li>
+        <li>Dependencia emocional</li>
+        <li>Establecimiento de límites</li>
+        <li>Desarrollo de hábitos saludables</li>
+      </ul>
     </div>
     <div class="servicio-card fade-up">
       <div class="servicio-icon">💑</div>
       <h3>Terapia de Pareja</h3>
-      <p>Herramientas para mejorar la comunicación, resolver conflictos y fortalecer el vínculo afectivo. Espacio neutro y empático para ambos integrantes.</p>
+      <p>Un espacio seguro, confidencial y libre de prejuicios donde se practica el reconocimiento emocional, la comunicación efectiva y la identificación de patrones. Se trabaja:</p>
+      <ul class="servicio-list">
+        <li>Resolución de conflictos</li>
+        <li>Mejora de la comunicación</li>
+        <li>Reconocimiento y fortalecimiento de vínculos</li>
+        <li>Identificación de patrones destructivos</li>
+        <li>Crisis por infidelidad y conflictos de confianza</li>
+        <li>Adaptación a cambios: duelos, mudanza, enfermedad</li>
+        <li>Crianza y educación de los hijos</li>
+      </ul>
     </div>
     <div class="servicio-card fade-up">
       <div class="servicio-icon">🌐</div>
       <h3>Atención en Línea</h3>
-      <p>Sesiones por videollamada desde cualquier lugar. Misma calidad, privacidad y compromiso que la atención presencial.</p>
+      <p>La atención psicológica por llamada o videollamada es reconocida como modalidad válida, útil y segura por la American Psychological Association. Sus beneficios incluyen:</p>
+      <ul class="servicio-list">
+        <li>Flexibilidad de horarios</li>
+        <li>Pocas restricciones geográficas</li>
+        <li>Comodidad e intimidad en un lugar seguro</li>
+        <li>Mayores oportunidades de continuidad del tratamiento</li>
+        <li>Disminuye la sensación de ansiedad</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- TEST — 2 columnas -->
+<!-- SALUD MENTAL -->
+<section id="salud-mental">
+  <div class="salud-mental-left fade-up">
+    <p class="section-tag">La necesidad de atenderte</p>
+    <h2 class="section-title">Salud mental <em>y emocional</em></h2>
+    <div class="divider"></div>
+    <p style="color:var(--mid); line-height:1.8; margin-bottom:1.2rem;">
+      Somos bombardeados diariamente por malestares físicos, emocionales, mentales y sociales. El equilibrio entre estas fuerzas externas e internas es lo que podemos llamar salud mental y emocional, fundamental para el bienestar general. Este equilibrio te permite gestionar el estrés, desarrollar tu máximo potencial, mantener relaciones saludables y tomar decisiones acertadas.
+    </p>
+    <p style="color:var(--mid); line-height:1.8; margin-bottom:1rem; font-weight:500;">
+      ¿Cuándo es útil la terapia?
+    </p>
+    <p style="color:var(--mid); line-height:1.8; margin-bottom:1.2rem; font-size:.92rem;">
+      No necesitas haber vivido una crisis reciente para recibir apoyo psicológico. Las demandas cotidianas sostenidas por mucho tiempo pueden afectar tus emociones, pensamientos y comportamientos, interfiriendo con tu vida diaria y tu bienestar. La terapia es útil cuando quieres:
+    </p>
+    <ul class="servicio-list" style="margin-left:.5rem;">
+      <li>Manejar mejor tus emociones y reacciones</li>
+      <li>Mejorar relaciones personales o de pareja</li>
+      <li>Superar situaciones difíciles del pasado</li>
+      <li>Tomar decisiones importantes con más claridad</li>
+      <li>Conocerte mejor y crecer como persona</li>
+      <li>Reducir el estrés, la ansiedad o la tristeza</li>
+    </ul>
+  </div>
+  <div class="salud-mental-right fade-up">
+    <h3>¿Cómo sé que necesito mejorar mi salud mental?</h3>
+    <p>Considera buscar ayuda si experimentas cambios como:</p>
+    <ul class="salud-sintomas">
+      <li>Dificultades para dormir o descansar</li>
+      <li>Alteraciones en tu alimentación</li>
+      <li>Aislamiento prolongado</li>
+      <li>Sentimiento de tristeza persistente</li>
+      <li>Sensación de no poder hacer frente a los problemas cotidianos</li>
+      <li>Cansancio, hartazgo o desinterés constante</li>
+      <li>Enfermedades recurrentes sin explicación</li>
+      <li>Otras sensaciones de malestar o dificultad en tu vida diaria</li>
+    </ul>
+    <p style="margin-top:1.2rem; font-size:.82rem; opacity:.7; line-height:1.6;">
+      Estos síntomas pueden ser señal de un problema anterior invisibilizado por las exigencias diarias. Evita que se incrementen y busca ayuda. Te será beneficioso.
+    </p>
+    <div style="margin-top:1.5rem; text-align:center;">
+      <a href="https://wa.me/525540673953?text=Hola%20Paolo%2C%20vi%20tu%20p%C3%A1gina%20y%20me%20gustar%C3%ADa%20agendar%20una%20cita." class="btn-primary" target="_blank" style="display:inline-flex;">
+        💬 Hablar con Paolo
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TEST — DASS-21 -->
 <section id="test">
   <p class="section-tag fade-up">Autoevaluación</p>
   <h2 class="section-title fade-up">¿Podría <em>beneficiarme</em> de la terapia?</h2>
-  <p class="section-lead fade-up">Responde estas preguntas para reflexionar sobre tu estado emocional actual. Son solo una guía, no un diagnóstico.</p>
+  <p class="section-lead fade-up">Responde el cuestionario DASS-21, instrumento validado internacionalmente para evaluar síntomas de depresión, ansiedad y estrés. Es orientativo, no un diagnóstico.</p>
 
   <div class="test-layout">
-    <!-- COLUMNA IZQUIERDA: disclaimer + info panel -->
+    <!-- COLUMNA IZQUIERDA: imagen grande + disclaimer -->
     <div class="test-left fade-up">
+      <div class="test-img-wrap">
+        <img
+          src="https://images.pexels.com/photos/6136084/pexels-photo-6136084.jpeg?auto=compress&cs=tinysrgb&w=700&h=500&fit=crop"
+          alt="Persona reflexionando sobre su bienestar emocional"
+          loading="lazy"
+        >
+      </div>
       <div class="test-disclaimer">
         <span class="test-disclaimer-icon">⚠️</span>
-        <p><strong>Nota importante:</strong> Este cuestionario es únicamente orientativo y no sustituye la evaluación de un profesional de salud mental. Sus resultados no constituyen un diagnóstico. Si tienes dudas sobre tu bienestar emocional, lo más recomendable es consultar directamente con un psicólogo.</p>
-      </div>
-
-      <div class="test-info-panel">
-        <h3>¿Cuándo es útil la terapia?</h3>
-        <p>No necesitas estar en crisis para beneficiarte de un proceso terapéutico. La terapia es útil cuando quieres:</p>
-        <ul class="test-info-list">
-          <li>Manejar mejor tus emociones y reacciones</li>
-          <li>Mejorar relaciones personales o de pareja</li>
-          <li>Superar situaciones difíciles del pasado</li>
-          <li>Tomar decisiones importantes con más claridad</li>
-          <li>Conocerte mejor y crecer como persona</li>
-          <li>Reducir el estrés, la ansiedad o la tristeza</li>
-        </ul>
-        <div class="test-psi-deco">Ψ</div>
+        <p><strong>Nota importante:</strong> Este cuestionario (DASS-21) es únicamente orientativo y no sustituye la evaluación de un profesional de salud mental. Sus resultados no constituyen un diagnóstico clínico. Ante cualquier duda, lo más recomendable es consultar directamente con un psicólogo.</p>
       </div>
     </div>
 
-    <!-- COLUMNA DERECHA: cuestionario -->
+    <!-- COLUMNA DERECHA: instrucciones + cuestionario -->
     <div class="fade-up">
+      <div class="test-instructions-inline">
+        <h3>Instrucciones</h3>
+        <p>Lee cada afirmación y selecciona el número que mejor describe <strong>qué tan seguido te ha ocurrido durante la semana pasada</strong>.</p>
+        <ul class="test-info-list">
+          <li><strong>0</strong> — No me ha ocurrido</li>
+          <li><strong>1</strong> — Un poco / parte del tiempo</li>
+          <li><strong>2</strong> — Bastante / buena parte del tiempo</li>
+          <li><strong>3</strong> — Mucho / la mayor parte del tiempo</li>
+        </ul>
+      </div>
       <div class="test-box">
         <div class="test-progress-bar"><div class="test-progress-fill" id="testProgress"></div></div>
         <div class="test-inner">
 
-          <div class="test-step active" data-step="1">
-            <p class="test-question-num">Pregunta 1 de 6</p>
-            <p class="test-question">¿Con qué frecuencia sientes que tus emociones te desbordan o son difíciles de manejar?</p>
-            <div class="test-options">
-              <button class="test-option" data-value="1">Casi nunca — me siento bastante estable</button>
-              <button class="test-option" data-value="2">A veces — hay momentos difíciles pero los supero</button>
-              <button class="test-option" data-value="3">Con frecuencia — me cuesta retomar el equilibrio</button>
-              <button class="test-option" data-value="4">Casi siempre — siento que ya no puedo con todo</button>
+          <!-- PÁGINA 1: preguntas 1–7 -->
+          <div class="dass-page active" id="dassPage1">
+            <p style="font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.8rem;">Preguntas 1 – 7 de 21</p>
+
+            <div class="dass-question-block">
+              <span class="dass-question-num-label">1</span>
+              <p class="dass-question-text">Me ha costado mucho descargar la tensión.</p>
+              <div class="dass-options" data-q="1">
+                <button class="dass-option" data-val="0"><span class="dass-option-num">0</span></button>
+                <button class="dass-option" data-val="1"><span class="dass-option-num">1</span></button>
+                <button class="dass-option" data-val="2"><span class="dass-option-num">2</span></button>
+                <button class="dass-option" data-val="3"><span class="dass-option-num">3</span></button>
+              </div>
+            </div>
+            <div class="dass-question-block">
+              <span class="dass-question-num-label">2</span>
+              <p class="dass-question-text">Me di cuenta que tenía la boca seca.</p>
+              <div class="dass-options" data-q="2">
+                <button class="dass-option" data-val="0"><span class="dass-option-num">0</span></button>
+                <button class="dass-option" data-val="1"><span class="dass-option-num">1</span></button>
+                <button class="dass-option" data-val="2"><span class="dass-option-num">2</span></button>
+                <button class="dass-option" data-val="3"><span class="dass-option-num">3</span></button>
+              </div>
+            </div>
+            <div class="dass-question-block">
+              <span class="dass-question-num-label">3</span>
+              <p class="dass-question-text">No podía sentir ningún sentimiento positivo.</p>
+              <div class="dass-options" data-q="3">
+                <button class="dass-option" data-val="0"><span class="dass-option-num">0</span></button>
+                <button class="dass-option" data-val="1"><span class="dass-option-num">1</span></button>
+                <button class="dass-option" data-val="2"><span class="dass-option-num">2</span></button>
+                <button class="dass-option" data-val="3"><span class="dass-option-num">3</span></button>
+              </div>
+            </div>
+            <div class="dass-question-block">
+              <span class="dass-question-num-label">4</span>
+              <p class="dass-question-text">Se me hizo difícil respirar.</p>
+              <div class="dass-options" data-q="4">
+                <button class="dass-option" data-val="0"><span class="dass-option-num">0</span></button>
+                <button class="dass-option" data-val="1"><span class="dass-option-num">1</span></button>
+                <button class="dass-option" data-val="2"><span class="dass-option-num">2</span></button>
+                <button class="dass-option" data-val="3"><span class="dass-option-num">3</span></button>
+              </div>
+            </div>
+            <div class="dass-question-block">
+              <span class="dass-question-num-label">5</span>
+              <p class="dass-question-text">Se me hizo difícil tomar la iniciativa para hacer cosas.</p>
+              <div class="dass-options" data-q="5">
+                <button class="dass-option" data-val="0"><span class="dass-option-num">0</span></button>
+                <button class="dass-option" data-val="1"><span class="dass-option-num">1</span></button>
+                <button class="dass-option" data-val="2"><span class="dass-option-num">2</span></button>
+                <button class="dass-option" data-val="3"><span class="dass-option-num">3</span></button>
+              </div>
+            </div>
+            <div class="dass-question-block">
+              <span class="dass-question-num-label">6</span>
+              <p class="dass-question-text">Reaccioné exageradamente en ciertas situaciones.</p>
+              <div class="dass-options" data-q="6">
+                <button class="dass-option" data-val="0"><span class="dass-option-num">0</span></button>
+                <button class="dass-option" data-val="1"><span class="dass-option-num">1</span></button>
+                <button class="dass-option" data-val="2"><span class="dass-option-num">2</span></button>
+                <button class="dass-option" data-val="3"><span class="dass-option-num">3</span></button>
+              </div>
+            </div>
+            <div class="dass-question-block">
+              <span class="dass-question-num-label">7</span>
+              <p class="dass-question-text">Sentí que mis manos temblaban.</p>
+              <div class="dass-options" data-q="7">
+                <button class="dass-option" data-val="0"><span class="dass-option-num">0</span></button>
+                <button class="dass-option" data-val="1"><span class="dass-option-num">1</span></button>
+                <button class="dass-option" data-val="2"><span class="dass-option-num">2</span></button>
+                <button class="dass-option" data-val="3"><span class="dass-option-num">3</span></button>
+              </div>
             </div>
             <div class="test-nav">
               <span></span>
-              <button class="test-nav-btn btn-next" onclick="nextStep()" disabled>Siguiente →</button>
+              <button class="test-nav-btn btn-next" id="btn1" onclick="dassNext(1)" disabled>Siguiente →</button>
             </div>
           </div>
 
-          <div class="test-step" data-step="2">
-            <p class="test-question-num">Pregunta 2 de 6</p>
-            <p class="test-question">¿Hay situaciones pasadas o presentes que siguen afectando tu vida cotidiana?</p>
-            <div class="test-options">
-              <button class="test-option" data-value="1">No, en general las he procesado bien</button>
-              <button class="test-option" data-value="2">Algo, pero no interfiere mucho en mi día a día</button>
-              <button class="test-option" data-value="3">Sí, pienso en ellas con frecuencia</button>
-              <button class="test-option" data-value="4">Sí, siento que no puedo avanzar por eso</button>
+          <!-- PÁGINA 2: preguntas 8–14 -->
+          <div class="dass-page" id="dassPage2">
+            <p style="font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.8rem;">Preguntas 8 – 14 de 21</p>
+
+            <div class="dass-question-block">
+              <span class="dass-question-num-label">8</span>
+              <p class="dass-question-text">He sentido que estaba gastando una gran cantidad de energía.</p>
+              <div class="dass-options" data-q="8">
+                <button class="dass-option" data-val="0"><span class="dass-option-num">0</span></button>
+                <button class="dass-option" data-val="1"><span class="dass-option-num">1</span></button>
+                <button class="dass-option" data-val="2"><span class="dass-option-num">2</span></button>
+                <button class="dass-option" data-val="3"><span class="dass-option-num">3</span></button>
+              </div>
+            </div>
+            <div class="dass-question-block">
+              <span class="dass-question-num-label">9</span>
+              <p class="dass-question-text">Estaba preocupado por situaciones en las cuales podía tener pánico o hacer el ridículo.</p>
+              <div class="dass-options" data-q="9">
+                <button class="dass-option" data-val="0"><span class="dass-option-num">0</span></button>
+                <button class="dass-option" data-val="1"><span class="dass-option-num">1</span></button>
+                <button class="dass-option" data-val="2"><span class="dass-option-num">2</span></button>
+                <button class="dass-option" data-val="3"><span class="dass-option-num">3</span></button>
+              </div>
+            </div>
+            <div class="dass-question-block">
+              <span class="dass-question-num-label">10</span>
+              <p class="dass-question-text">He sentido que no había nada que me ilusionara.</p>
+              <div class="dass-options" data-q="10">
+                <button class="dass-option" data-val="0"><span class="dass-option-num">0</span></button>
+                <button class="dass-option" data-val="1"><span class="dass-option-num">1</span></button>
+                <button class="dass-option" data-val="2"><span class="dass-option-num">2</span></button>
+                <button class="dass-option" data-val="3"><span class="dass-option-num">3</span></button>
+              </div>
+            </div>
+            <div class="dass-question-block">
+              <span class="dass-question-num-label">11</span>
+              <p class="dass-question-text">Me he sentido inquieto.</p>
+              <div class="dass-options" data-q="11">
+                <button class="dass-option" data-val="0"><span class="dass-option-num">0</span></button>
+                <button class="dass-option" data-val="1"><span class="dass-option-num">1</span></button>
+                <button class="dass-option" data-val="2"><span class="dass-option-num">2</span></button>
+                <button class="dass-option" data-val="3"><span class="dass-option-num">3</span></button>
+              </div>
+            </div>
+            <div class="dass-question-block">
+              <span class="dass-question-num-label">12</span>
+              <p class="dass-question-text">Se me hizo difícil relajarme.</p>
+              <div class="dass-options" data-q="12">
+                <button class="dass-option" data-val="0"><span class="dass-option-num">0</span></button>
+                <button class="dass-option" data-val="1"><span class="dass-option-num">1</span></button>
+                <button class="dass-option" data-val="2"><span class="dass-option-num">2</span></button>
+                <button class="dass-option" data-val="3"><span class="dass-option-num">3</span></button>
+              </div>
+            </div>
+            <div class="dass-question-block">
+              <span class="dass-question-num-label">13</span>
+              <p class="dass-question-text">Me sentí triste y deprimido.</p>
+              <div class="dass-options" data-q="13">
+                <button class="dass-option" data-val="0"><span class="dass-option-num">0</span></button>
+                <button class="dass-option" data-val="1"><span class="dass-option-num">1</span></button>
+                <button class="dass-option" data-val="2"><span class="dass-option-num">2</span></button>
+                <button class="dass-option" data-val="3"><span class="dass-option-num">3</span></button>
+              </div>
+            </div>
+            <div class="dass-question-block">
+              <span class="dass-question-num-label">14</span>
+              <p class="dass-question-text">No toleré nada que no me permitiera continuar con lo que estaba haciendo.</p>
+              <div class="dass-options" data-q="14">
+                <button class="dass-option" data-val="0"><span class="dass-option-num">0</span></button>
+                <button class="dass-option" data-val="1"><span class="dass-option-num">1</span></button>
+                <button class="dass-option" data-val="2"><span class="dass-option-num">2</span></button>
+                <button class="dass-option" data-val="3"><span class="dass-option-num">3</span></button>
+              </div>
             </div>
             <div class="test-nav">
-              <button class="test-nav-btn btn-prev" onclick="prevStep()">← Anterior</button>
-              <button class="test-nav-btn btn-next" onclick="nextStep()" disabled>Siguiente →</button>
+              <button class="test-nav-btn btn-prev" onclick="dassPrev(2)">← Anterior</button>
+              <button class="test-nav-btn btn-next" id="btn2" onclick="dassNext(2)" disabled>Siguiente →</button>
             </div>
           </div>
 
-          <div class="test-step" data-step="3">
-            <p class="test-question-num">Pregunta 3 de 6</p>
-            <p class="test-question">¿Cómo describirías tu calidad de sueño y energía diaria en el último mes?</p>
-            <div class="test-options">
-              <button class="test-option" data-value="1">Buena — descanso bien y tengo energía</button>
-              <button class="test-option" data-value="2">Regular — hay días difíciles pero es manejable</button>
-              <button class="test-option" data-value="3">Mala — me cuesta dormir o me siento agotado/a constantemente</button>
-              <button class="test-option" data-value="4">Muy mala — el cansancio emocional me afecta todo el tiempo</button>
+          <!-- PÁGINA 3: preguntas 15–21 -->
+          <div class="dass-page" id="dassPage3">
+            <p style="font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.8rem;">Preguntas 15 – 21 de 21</p>
+
+            <div class="dass-question-block">
+              <span class="dass-question-num-label">15</span>
+              <p class="dass-question-text">Sentí que estaba al punto de pánico.</p>
+              <div class="dass-options" data-q="15">
+                <button class="dass-option" data-val="0"><span class="dass-option-num">0</span></button>
+                <button class="dass-option" data-val="1"><span class="dass-option-num">1</span></button>
+                <button class="dass-option" data-val="2"><span class="dass-option-num">2</span></button>
+                <button class="dass-option" data-val="3"><span class="dass-option-num">3</span></button>
+              </div>
+            </div>
+            <div class="dass-question-block">
+              <span class="dass-question-num-label">16</span>
+              <p class="dass-question-text">No me pude entusiasmar por nada.</p>
+              <div class="dass-options" data-q="16">
+                <button class="dass-option" data-val="0"><span class="dass-option-num">0</span></button>
+                <button class="dass-option" data-val="1"><span class="dass-option-num">1</span></button>
+                <button class="dass-option" data-val="2"><span class="dass-option-num">2</span></button>
+                <button class="dass-option" data-val="3"><span class="dass-option-num">3</span></button>
+              </div>
+            </div>
+            <div class="dass-question-block">
+              <span class="dass-question-num-label">17</span>
+              <p class="dass-question-text">Sentí que valía muy poco como persona.</p>
+              <div class="dass-options" data-q="17">
+                <button class="dass-option" data-val="0"><span class="dass-option-num">0</span></button>
+                <button class="dass-option" data-val="1"><span class="dass-option-num">1</span></button>
+                <button class="dass-option" data-val="2"><span class="dass-option-num">2</span></button>
+                <button class="dass-option" data-val="3"><span class="dass-option-num">3</span></button>
+              </div>
+            </div>
+            <div class="dass-question-block">
+              <span class="dass-question-num-label">18</span>
+              <p class="dass-question-text">He tendido a sentirme enfadado con facilidad.</p>
+              <div class="dass-options" data-q="18">
+                <button class="dass-option" data-val="0"><span class="dass-option-num">0</span></button>
+                <button class="dass-option" data-val="1"><span class="dass-option-num">1</span></button>
+                <button class="dass-option" data-val="2"><span class="dass-option-num">2</span></button>
+                <button class="dass-option" data-val="3"><span class="dass-option-num">3</span></button>
+              </div>
+            </div>
+            <div class="dass-question-block">
+              <span class="dass-question-num-label">19</span>
+              <p class="dass-question-text">Sentí los latidos de mi corazón a pesar de no haber hecho ningún esfuerzo físico.</p>
+              <div class="dass-options" data-q="19">
+                <button class="dass-option" data-val="0"><span class="dass-option-num">0</span></button>
+                <button class="dass-option" data-val="1"><span class="dass-option-num">1</span></button>
+                <button class="dass-option" data-val="2"><span class="dass-option-num">2</span></button>
+                <button class="dass-option" data-val="3"><span class="dass-option-num">3</span></button>
+              </div>
+            </div>
+            <div class="dass-question-block">
+              <span class="dass-question-num-label">20</span>
+              <p class="dass-question-text">Tuve miedo sin razón.</p>
+              <div class="dass-options" data-q="20">
+                <button class="dass-option" data-val="0"><span class="dass-option-num">0</span></button>
+                <button class="dass-option" data-val="1"><span class="dass-option-num">1</span></button>
+                <button class="dass-option" data-val="2"><span class="dass-option-num">2</span></button>
+                <button class="dass-option" data-val="3"><span class="dass-option-num">3</span></button>
+              </div>
+            </div>
+            <div class="dass-question-block">
+              <span class="dass-question-num-label">21</span>
+              <p class="dass-question-text">Sentí que la vida no tenía ningún sentido.</p>
+              <div class="dass-options" data-q="21">
+                <button class="dass-option" data-val="0"><span class="dass-option-num">0</span></button>
+                <button class="dass-option" data-val="1"><span class="dass-option-num">1</span></button>
+                <button class="dass-option" data-val="2"><span class="dass-option-num">2</span></button>
+                <button class="dass-option" data-val="3"><span class="dass-option-num">3</span></button>
+              </div>
             </div>
             <div class="test-nav">
-              <button class="test-nav-btn btn-prev" onclick="prevStep()">← Anterior</button>
-              <button class="test-nav-btn btn-next" onclick="nextStep()" disabled>Siguiente →</button>
+              <button class="test-nav-btn btn-prev" onclick="dassPrev(3)">← Anterior</button>
+              <button class="test-nav-btn btn-next" id="btn3" onclick="dassShowResult()" disabled>Ver resultado →</button>
             </div>
           </div>
 
-          <div class="test-step" data-step="4">
-            <p class="test-question-num">Pregunta 4 de 6</p>
-            <p class="test-question">¿Sientes que tus relaciones personales están siendo afectadas por tu estado emocional?</p>
-            <div class="test-options">
-              <button class="test-option" data-value="1">No, mis relaciones están bien</button>
-              <button class="test-option" data-value="2">Un poco, hay tensiones ocasionales</button>
-              <button class="test-option" data-value="3">Sí, hay conflictos frecuentes o distanciamiento</button>
-              <button class="test-option" data-value="4">Bastante, siento que mis relaciones se están deteriorando</button>
+          <!-- RESULTADO DASS -->
+          <div class="test-result" id="dassResult">
+            <h3 class="result-title">Tus resultados</h3>
+            <p class="result-desc">Basado en el cuestionario DASS-21, esta es una orientación sobre tu estado emocional en los últimos días:</p>
+            <div class="dass-result-scores">
+              <div class="dass-score-card">
+                <div class="dass-score-label">Depresión</div>
+                <div class="dass-score-num" id="scoreD">—</div>
+                <span class="dass-score-level" id="levelD"></span>
+              </div>
+              <div class="dass-score-card">
+                <div class="dass-score-label">Ansiedad</div>
+                <div class="dass-score-num" id="scoreA">—</div>
+                <span class="dass-score-level" id="levelA"></span>
+              </div>
+              <div class="dass-score-card">
+                <div class="dass-score-label">Estrés</div>
+                <div class="dass-score-num" id="scoreE">—</div>
+                <span class="dass-score-level" id="levelE"></span>
+              </div>
             </div>
-            <div class="test-nav">
-              <button class="test-nav-btn btn-prev" onclick="prevStep()">← Anterior</button>
-              <button class="test-nav-btn btn-next" onclick="nextStep()" disabled>Siguiente →</button>
-            </div>
-          </div>
-
-          <div class="test-step" data-step="5">
-            <p class="test-question-num">Pregunta 5 de 6</p>
-            <p class="test-question">¿Has tenido pensamientos recurrentes de tristeza, desesperanza o ansiedad que no logras controlar?</p>
-            <div class="test-options">
-              <button class="test-option" data-value="1">No, en general me siento bien</button>
-              <button class="test-option" data-value="2">Ocasionalmente, pero pasan</button>
-              <button class="test-option" data-value="3">Con cierta frecuencia, me preocupan</button>
-              <button class="test-option" data-value="4">Con mucha frecuencia, interfieren en mi vida</button>
-            </div>
-            <div class="test-nav">
-              <button class="test-nav-btn btn-prev" onclick="prevStep()">← Anterior</button>
-              <button class="test-nav-btn btn-next" onclick="nextStep()" disabled>Siguiente →</button>
-            </div>
-          </div>
-
-          <div class="test-step" data-step="6">
-            <p class="test-question-num">Pregunta 6 de 6</p>
-            <p class="test-question">¿Qué tan dispuesto/a estarías a explorar tu mundo interior con acompañamiento profesional?</p>
-            <div class="test-options">
-              <button class="test-option" data-value="1">Mucho, creo que me haría bien</button>
-              <button class="test-option" data-value="2">Algo, tengo curiosidad pero también dudas</button>
-              <button class="test-option" data-value="3">Poco, no sé si es para mí</button>
-              <button class="test-option" data-value="4">No lo había considerado, llegué aquí por explorar</button>
-            </div>
-            <div class="test-nav">
-              <button class="test-nav-btn btn-prev" onclick="prevStep()">← Anterior</button>
-              <button class="test-nav-btn btn-next" onclick="showResult()" disabled>Ver resultado →</button>
-            </div>
-          </div>
-
-          <div class="test-result" id="testResult">
-            <div class="result-emoji" id="resultEmoji">🌿</div>
-            <h3 class="result-title" id="resultTitle">Tu resultado</h3>
-            <p class="result-desc" id="resultDesc">Descripción del resultado.</p>
-            <a href="https://wa.me/525540673953?text=Hola%20Paolo%2C%20hice%20el%20test%20de%20tu%20p%C3%A1gina%20y%20me%20gustar%C3%ADa%20agendar%20una%20consulta." class="result-cta" target="_blank">💬 Hablar con Paolo</a>
-            <p class="result-note">Recuerda: este test no es un diagnóstico. Un profesional puede darte una evaluación real y personalizada.</p>
+            <p class="result-desc" id="dassGenMsg" style="margin-top:.5rem;"></p>
+            <a href="https://wa.me/525540673953?text=Hola%20Paolo%2C%20hice%20el%20test%20DASS-21%20de%20tu%20p%C3%A1gina%20y%20me%20gustar%C3%ADa%20agendar%20una%20consulta." class="result-cta" target="_blank">💬 Hablar con Paolo</a>
+            <p class="result-note">Recuerda: estos resultados son orientativos y no constituyen un diagnóstico clínico. Un profesional puede darte una evaluación real y personalizada.<br><br>
+            <em>Puntos de corte: Depresión (leve 5–6, moderada 7–10, severa 11–13, extrema 14+) · Ansiedad (leve 4, moderada 5–7, severa 8–9, extrema 10+) · Estrés (leve 8–9, moderado 10–12, severo 13–16, extremo 17+)</em></p>
             <br>
-            <button class="test-nav-btn btn-prev" onclick="resetTest()" style="margin-top:.5rem;">Repetir test</button>
+            <button class="test-nav-btn btn-prev" onclick="dassReset()">Repetir test</button>
           </div>
 
         </div>
       </div>
+    </div>
+  </div>
     </div>
   </div>
 </section>
@@ -934,39 +1245,38 @@
   <div class="testimonios-grid">
     <div class="testimonio-card fade-up">
       <div class="stars">★★★★★</div>
-      <p class="testimonio-text">Llegué en un momento muy difícil y Paolo me ayudó a encontrar herramientas que nunca creí tener. Desde el primer día me hizo sentir escuchada sin juicios.</p>
+      <p class="testimonio-text">Los dos meses que he trabajado en terapia con el psicólogo Paolo he sentido un apoyo emocional y psicológico a mi grave problema con mi hijo adolescente, presentándose mayor bienestar, tranquilidad y paz. Muchas gracias.</p>
       <div class="testimonio-author">
-        <div class="testimonio-avatar">M</div>
+        <div class="testimonio-avatar">P</div>
         <div>
-          <div class="testimonio-name">María G.</div>
+          <div class="testimonio-name">Profa. Patricia Pérez</div>
           <div class="testimonio-detail">Terapia individual · Presencial</div>
         </div>
       </div>
     </div>
     <div class="testimonio-card fade-up">
       <div class="stars">★★★★★</div>
-      <p class="testimonio-text">Mi pareja y yo llevábamos meses sin poder comunicarnos. Las sesiones con Paolo nos dieron un espacio neutro para escucharnos de verdad. Definitivamente recomendable.</p>
+      <p class="testimonio-text">Gracias a la ayuda del psicólogo Paolo Levario he podido mejorar tanto mi estado de ánimo, tener el valor de realizar proyectos sin miedo al fracaso o al contacto con personas. También mejoró mi salud en general y me siento más a gusto conmigo mismo y con mi familia.</p>
       <div class="testimonio-author">
-        <div class="testimonio-avatar">R</div>
+        <div class="testimonio-avatar">J</div>
         <div>
-          <div class="testimonio-name">Roberto A.</div>
-          <div class="testimonio-detail">Terapia de pareja · En línea</div>
+          <div class="testimonio-name">Josué M., 19 años</div>
+          <div class="testimonio-detail">Terapia individual</div>
         </div>
       </div>
     </div>
     <div class="testimonio-card fade-up">
       <div class="stars">★★★★★</div>
-      <p class="testimonio-text">Como joven de 22 años dudé mucho en ir al psicólogo. Paolo hizo que fuera lo más natural del mundo. Aprendí a entender mis emociones como nunca antes.</p>
+      <p class="testimonio-text">Mi relación de pareja iba de mal en peor y no sabía qué hacer. El dolor, la culpa y el miedo no me dejaban hacer nada más que culparme. Por medio de la terapia pude tomar decisiones y acciones que beneficiaron a mi hijo y a mí en nuestra vida, estabilidad y seguridad.</p>
       <div class="testimonio-author">
-        <div class="testimonio-avatar">L</div>
+        <div class="testimonio-avatar">K</div>
         <div>
-          <div class="testimonio-name">Laura P.</div>
-          <div class="testimonio-detail">Terapia para jóvenes · En línea</div>
+          <div class="testimonio-name">Karen, 26 años</div>
+          <div class="testimonio-detail">Terapia individual · Pareja</div>
         </div>
       </div>
     </div>
   </div>
-  <p style="font-size:.78rem; color:var(--muted); margin-top:1.5rem; font-style:italic;">* Los nombres han sido modificados para proteger la privacidad. Testimonios de ejemplo — reemplazar con reales al publicar.</p>
 </section>
 
 <!-- FAQ -->
@@ -1001,7 +1311,7 @@
         ¿Las sesiones en línea son igual de efectivas?
         <span class="faq-chevron"></span>
       </button>
-      <div class="faq-answer">Sí. Numerosos estudios muestran que la terapia en línea tiene resultados comparables a la presencial. Lo importante es el espacio de confianza, la constancia y el compromiso con el proceso.</div>
+      <div class="faq-answer">Sí. La American Psychological Association reconoce la atención en línea como modalidad válida, útil y segura, con resultados comparables a la atención presencial. Lo importante es el espacio de confianza, la constancia y el compromiso con el proceso.</div>
     </div>
     <div class="faq-item">
       <button class="faq-question" onclick="toggleFaq(this)">
@@ -1044,11 +1354,6 @@
         <div class="contacto-item-icon">🌐</div>
         Atención presencial y en línea
       </div>
-      <!-- Redes sociales: agregar cuando estén disponibles -->
-      <!-- <a href="https://instagram.com/..." class="contacto-item" target="_blank">
-        <div class="contacto-item-icon">📸</div>
-        @usuario_instagram
-      </a> -->
     </div>
   </div>
   <div class="contacto-right">
@@ -1086,74 +1391,151 @@
     btn.closest('.faq-item').classList.toggle('open');
   }
 
-  // ── TEST
-  let currentStep = 1;
-  const totalSteps = 6;
-  const answers = {};
+  // ── Sonido de avance (Web Audio API — sin archivos externos)
+  function playAdvanceSound() {
+    try {
+      const ctx = new (window.AudioContext || window.webkitAudioContext)();
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(660, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(880, ctx.currentTime + 0.12);
+      gain.gain.setValueAtTime(0.18, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.28);
+      osc.start(ctx.currentTime);
+      osc.stop(ctx.currentTime + 0.3);
+    } catch(e) {}
+  }
+
+  // ── DASS-21 lógica
+  const dassAnswers = {};
+  // subescalas: D=3,5,10,13,16,17,21 | A=2,4,7,9,15,19,20 | E=1,6,8,11,12,14,18
+  const dassD = [3,5,10,13,16,17,21];
+  const dassA = [2,4,7,9,15,19,20];
+  const dassE = [1,6,8,11,12,14,18];
+
+  // Páginas y preguntas que contienen
+  const pageQuestions = {
+    1: [1,2,3,4,5,6,7],
+    2: [8,9,10,11,12,13,14],
+    3: [15,16,17,18,19,20,21]
+  };
+
+  function pageComplete(page) {
+    return pageQuestions[page].every(q => dassAnswers[q] !== undefined);
+  }
 
   function updateProgress() {
-    document.getElementById('testProgress').style.width = (((currentStep-1)/totalSteps)*100) + '%';
+    const answered = Object.keys(dassAnswers).length;
+    document.getElementById('testProgress').style.width = ((answered / 21) * 100) + '%';
   }
 
-  function nextStep() {
-    document.querySelector(`.test-step[data-step="${currentStep}"]`).classList.remove('active');
-    currentStep++;
-    if (currentStep <= totalSteps) {
-      document.querySelector(`.test-step[data-step="${currentStep}"]`).classList.add('active');
+  function dassNext(page) {
+    playAdvanceSound();
+    document.getElementById('dassPage' + page).classList.remove('active');
+    document.getElementById('dassPage' + (page+1)).classList.add('active');
+  }
+  function dassPrev(page) {
+    document.getElementById('dassPage' + page).classList.remove('active');
+    document.getElementById('dassPage' + (page-1)).classList.add('active');
+  }
+
+  // Nivel por subescala
+  function dassLevel(score, type) {
+    if (type === 'D') {
+      if (score <= 4)  return ['Normal', 'level-normal'];
+      if (score <= 6)  return ['Leve', 'level-leve'];
+      if (score <= 10) return ['Moderada', 'level-moderado'];
+      if (score <= 13) return ['Severa', 'level-severo'];
+      return ['Extremamente severa', 'level-extremo'];
     }
-    updateProgress();
+    if (type === 'A') {
+      if (score <= 3)  return ['Normal', 'level-normal'];
+      if (score === 4) return ['Leve', 'level-leve'];
+      if (score <= 7)  return ['Moderada', 'level-moderado'];
+      if (score <= 9)  return ['Severa', 'level-severo'];
+      return ['Extremamente severa', 'level-extremo'];
+    }
+    if (type === 'E') {
+      if (score <= 7)  return ['Normal', 'level-normal'];
+      if (score <= 9)  return ['Leve', 'level-leve'];
+      if (score <= 12) return ['Moderado', 'level-moderado'];
+      if (score <= 16) return ['Severo', 'level-severo'];
+      return ['Extremamente severo', 'level-extremo'];
+    }
   }
 
-  function prevStep() {
-    document.querySelector(`.test-step[data-step="${currentStep}"]`).classList.remove('active');
-    currentStep--;
-    document.querySelector(`.test-step[data-step="${currentStep}"]`).classList.add('active');
-    updateProgress();
-  }
-
-  function showResult() {
-    document.querySelector(`.test-step[data-step="${currentStep}"]`).classList.remove('active');
+  function dassShowResult() {
+    playAdvanceSound();
+    document.getElementById('dassPage3').classList.remove('active');
     document.getElementById('testProgress').style.width = '100%';
-    const avg = Object.values(answers).reduce((a,b)=>a+b,0) / totalSteps;
-    let emoji, title, desc;
-    if (avg <= 1.5) {
-      emoji = '🌿'; title = 'Tu bienestar emocional parece estable';
-      desc = 'Tus respuestas sugieren que manejas bien tus emociones y relaciones. Aun así, la terapia puede ser una herramienta valiosa para el autoconocimiento y el crecimiento personal, no solo para momentos de crisis.';
-    } else if (avg <= 2.5) {
-      emoji = '🌤️'; title = 'Podrías beneficiarte de un espacio de apoyo';
-      desc = 'Hay áreas en tu vida emocional que podrían fortalecerse. Un proceso terapéutico puede ayudarte a desarrollar herramientas, mejorar relaciones y encontrar mayor equilibrio en tu vida cotidiana.';
-    } else if (avg <= 3.2) {
-      emoji = '🌧️'; title = 'Sería recomendable buscar acompañamiento profesional';
-      desc = 'Tus respuestas indican que estás atravesando un momento de dificultad emocional significativa. Hablar con un psicólogo puede ser un paso importante para encontrar alivio, herramientas y claridad.';
+
+    const scoreD = dassD.reduce((s,q) => s + (dassAnswers[q] || 0), 0);
+    const scoreA = dassA.reduce((s,q) => s + (dassAnswers[q] || 0), 0);
+    const scoreE = dassE.reduce((s,q) => s + (dassAnswers[q] || 0), 0);
+
+    const [lblD, clsD] = dassLevel(scoreD, 'D');
+    const [lblA, clsA] = dassLevel(scoreA, 'A');
+    const [lblE, clsE] = dassLevel(scoreE, 'E');
+
+    document.getElementById('scoreD').textContent = scoreD;
+    document.getElementById('scoreA').textContent = scoreA;
+    document.getElementById('scoreE').textContent = scoreE;
+
+    const ldEl = document.getElementById('levelD');
+    ldEl.textContent = lblD; ldEl.className = 'dass-score-level ' + clsD;
+    const laEl = document.getElementById('levelA');
+    laEl.textContent = lblA; laEl.className = 'dass-score-level ' + clsA;
+    const leEl = document.getElementById('levelE');
+    leEl.textContent = lblE; leEl.className = 'dass-score-level ' + clsE;
+
+    // Mensaje general
+    const maxScore = Math.max(scoreD, scoreA, scoreE);
+    let msg = '';
+    if (maxScore <= 4) {
+      msg = 'Tus puntajes sugieren un estado emocional estable en este momento. Aun así, la terapia puede ser un valioso espacio de crecimiento y autoconocimiento.';
+    } else if (maxScore <= 10) {
+      msg = 'Hay áreas que podrían beneficiarse de atención. Un espacio terapéutico puede ayudarte a desarrollar herramientas y encontrar mayor equilibrio.';
+    } else if (maxScore <= 16) {
+      msg = 'Tus resultados indican un nivel de malestar significativo. Sería recomendable buscar acompañamiento profesional para trabajar sobre estas áreas.';
     } else {
-      emoji = '🆘'; title = 'Te recomendamos buscar apoyo profesional pronto';
-      desc = 'Lo que describes sugiere un malestar emocional importante que merece atención profesional. No tienes que cargarlo solo/a. Dar el paso de hablar con alguien puede hacer una diferencia real en tu vida.';
+      msg = 'Los puntajes son elevados y merecen atención profesional. No tienes que cargarlo solo/a — dar el paso de consultar puede hacer una diferencia real.';
     }
-    document.getElementById('resultEmoji').textContent = emoji;
-    document.getElementById('resultTitle').textContent = title;
-    document.getElementById('resultDesc').textContent = desc;
-    document.getElementById('testResult').classList.add('active');
+    document.getElementById('dassGenMsg').textContent = msg;
+    document.getElementById('dassResult').classList.add('active');
   }
 
-  function resetTest() {
-    document.getElementById('testResult').classList.remove('active');
-    document.querySelectorAll('.test-step').forEach(s => s.classList.remove('active'));
-    document.querySelectorAll('.test-option').forEach(o => o.classList.remove('selected'));
-    document.querySelectorAll('.btn-next').forEach(b => b.disabled = true);
-    Object.keys(answers).forEach(k => delete answers[k]);
-    currentStep = 1;
-    document.querySelector('.test-step[data-step="1"]').classList.add('active');
+  function dassReset() {
+    Object.keys(dassAnswers).forEach(k => delete dassAnswers[k]);
+    document.querySelectorAll('.dass-option').forEach(o => o.classList.remove('selected'));
+    document.querySelectorAll('.dass-page').forEach(p => p.classList.remove('active'));
+    document.getElementById('dassResult').classList.remove('active');
+    document.getElementById('dassPage1').classList.add('active');
     document.getElementById('testProgress').style.width = '0%';
+    ['btn1','btn2','btn3'].forEach(id => {
+      const b = document.getElementById(id);
+      if (b) b.disabled = true;
+    });
   }
 
-  document.querySelectorAll('.test-options').forEach(optGroup => {
-    optGroup.querySelectorAll('.test-option').forEach(btn => {
+  // Click en opciones DASS
+  document.querySelectorAll('.dass-options').forEach(group => {
+    group.querySelectorAll('.dass-option').forEach(btn => {
       btn.addEventListener('click', function() {
-        optGroup.querySelectorAll('.test-option').forEach(b => b.classList.remove('selected'));
+        group.querySelectorAll('.dass-option').forEach(b => b.classList.remove('selected'));
         this.classList.add('selected');
-        answers[currentStep] = parseInt(this.dataset.value);
-        const nextBtn = this.closest('.test-step').querySelector('.btn-next');
-        if (nextBtn) nextBtn.disabled = false;
+        const q = parseInt(group.dataset.q);
+        dassAnswers[q] = parseInt(this.dataset.val);
+        updateProgress();
+        // Determinar en qué página estamos para habilitar el botón
+        for (const [page, qs] of Object.entries(pageQuestions)) {
+          if (qs.includes(q) && pageComplete(parseInt(page))) {
+            const btn = document.getElementById('btn' + page);
+            if (btn) btn.disabled = false;
+          }
+        }
       });
     });
   });
@@ -1186,7 +1568,7 @@
   const metricSection = document.getElementById('metricas');
   if (metricSection) metricObserver.observe(metricSection);
 
-  // ── Timeline: animar la línea vertical al hacer scroll
+  // ── Timeline: animar línea vertical
   const tl = document.querySelector('.timeline');
   if (tl) {
     tl.style.setProperty('--tl-h', '0%');
